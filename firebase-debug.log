@@ -1,0 +1,43 @@
+[debug] [2017-10-14T23:54:13.181Z] ----------------------------------------------------------------------
+[debug] [2017-10-14T23:54:13.183Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2017-10-14T23:54:13.183Z] CLI Version:   3.13.1
+[debug] [2017-10-14T23:54:13.183Z] Platform:      darwin
+[debug] [2017-10-14T23:54:13.183Z] Node Version:  v7.2.1
+[debug] [2017-10-14T23:54:13.184Z] Time:          Sat Oct 14 2017 19:54:13 GMT-0400 (EDT)
+[debug] [2017-10-14T23:54:13.184Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-10-14T23:54:13.196Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-10-14T23:54:13.196Z] > authorizing via signed-in user
+[debug] [2017-10-14T23:54:13.198Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-10-14T23:54:13.198Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/xbV2pFJ3dCNJKP5zq2v49EcZoe1ce_E0QXXh-cPMZL0kIg2ACyTWrKaXWwFaU8tR',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Oct 14 2017 19:54:13 GMT-0400 (EDT)
+[debug] [2017-10-14T23:54:13.291Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-14T23:54:13.294Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/grocer-ease  
+ Sat Oct 14 2017 19:54:13 GMT-0400 (EDT)
+[debug] [2017-10-14T23:54:13.544Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-14T23:54:13.545Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/grocer-ease/tokens  
+ Sat Oct 14 2017 19:54:13 GMT-0400 (EDT)
+[debug] [2017-10-14T23:54:13.833Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/Manoaj/Documents/GitHubStuff/Grocerease'...
+[info] 
+[debug] [2017-10-14T23:54:13.836Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/grocer-ease  
+ Sat Oct 14 2017 19:54:13 GMT-0400 (EDT)
+[debug] [2017-10-14T23:54:13.979Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-14T23:54:13.980Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/317395779439/clients/_:getWebAppConfig  
+ Sat Oct 14 2017 19:54:13 GMT-0400 (EDT)
+[debug] [2017-10-14T23:54:14.227Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-14T23:54:14.241Z] TypeError: Cannot read property 'public' of undefined
+    at Server.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/serve/hosting.js:34:17)
+    at Server.g (events.js:292:16)
+    at emitNone (events.js:86:13)
+    at Server.emit (events.js:185:7)
+    at emitListeningNT (net.js:1288:10)
+    at _combinedTickCallback (internal/process/next_tick.js:71:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:122:9)
+[error] 
+[error] Error: An unexpected error has occurred.
