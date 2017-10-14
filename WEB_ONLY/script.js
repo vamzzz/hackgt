@@ -79,16 +79,41 @@ function getShoppingList() {
 	var div = document.getElementById("shoppingList");
 	var ul = document.createElement("ul");
 	// console.log(shoppingList.length);
+
+	var listShop = {}
+	// console.log('SLIST', shoppingList);
+
 	for (var i = 0; i < shoppingList.length; i++) {
 		for (var j = 0; j < shoppingList[i]["ingredients"].length; j++) {
+
 			var ingredientItem = shoppingList[i]["ingredients"][j];
+			var foodItem = ingredientItem["food"];
+			var attrString = ingredientItem["quantity"] + " " + ingredientItem["measure"];
+			
+			if (listShop[foodItem]) {
+				listShop[foodItem].push(attrString)
+			} else {
+				listShop[foodItem] = [attrString];
+			}
+
 			var li = document.createElement("li");
 			var liText = document.createTextNode("(" + ingredientItem["quantity"] + " " + ingredientItem["measure"]+ ") " + ingredientItem["food"])
+			
+
 			li.appendChild(liText);
 			ul.appendChild(li);
 		}
 
 	}
+	ul.appendChild(document.createElement("li"));
+
+	for (var item in listShop) {
+		var li = document.createElement("li");
+		var liText = document.createTextNode("(" + listShop[item] + ") " + item);
+		li.appendChild(liText);
+		ul.appendChild(li);
+	};
+
 	div.appendChild(ul);
 }
 
@@ -100,6 +125,18 @@ function getLocalStorage() {
 		var ret = JSON.parse(localStorage.getItem("shoppingList"));
 		console.log(ret);
     return ret;
+}
+
+function similarity(s1, s2) {
+	s1 = String(s1)
+	s2 = String(s2)
+	$.get({
+		url: "https://westus.api.cognitive.microsoft.com/academic/v1.0/similarity?s1=" + s1 + "&s2=" + s2,
+		headers: { "Ocp-Apim-Subscription-Key" : 'ea62e1f89d6944c4a4998e21e9eda67c'},
+	}, function(data, status) {
+		console.log(data);
+	});
+	
 }
 
 // function checkJSON(url) {
