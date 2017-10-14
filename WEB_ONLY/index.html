@@ -4,9 +4,17 @@
 	<title>HackGT!</title>
 </head>
 <body>
-	<h3>Here lies Ionic...</h3>
-	
+	<h3>Food Search!</h3>
+
+	<input type="text" name="food" id="food" placeholder="Search food..."><br>
+	<input type="number" name="options" id="options" placeholder="How many options?"><br>
+	<button id=foodButton onclick="console.log(getFood());">Search for Food!</button>
+	<br>
+	<div id='foodResults'></div>
+	<br><br>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="script.js"></script>
+<!-- 	<script src="https://developer.edamam.com/attribution/badge.js"></script>
+	<div id="edamam-badge" data-color="white"></div> -->
 </body>
 </html>
