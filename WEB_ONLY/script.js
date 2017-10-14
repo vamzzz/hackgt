@@ -3,12 +3,12 @@ function searchFood(foodText, foodSearches) {
 	$.getJSON("https://api.edamam.com/search?q=" + foodText, function(data, status) {
 		var div = document.getElementById('foodResults');
 		while (div.firstChild) { div.removeChild(div.firstChild); }
-		
+
+		var recipes = data['hits'];
 		for (var index = 0; index < foodSearches; index++) {
 			var resultRecipe = { ingredients: [] }
-			var recipes = data['hits'];
 			var recipe = recipes[index]['recipe'];
-		
+
 			var recipeDiv = document.createElement('div');
 
 			var a = document.createElement('a');
