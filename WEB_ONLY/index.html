@@ -1,15 +1,61 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head lang="en">
 	<title>HackGT!</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<style>
+		.form-group {
+			margin-left: 10%;
+			margin-right: 10%;
+		}
+
+		.search {
+			margin-top: 25px;
+		}
+
+		.button {
+			text-align: center;
+		}
+
+	</style>
 </head>
 <body>
 	<h3>Food Search!</h3>
 
-	<input type="text" name="food" id="food" placeholder="Search food..."><br>
-	<input type="number" name="options" id="options" placeholder="How many options?"><br>
-	<button id=foodButton onclick="console.log(getFood());">Search for Food!</button>
-	<br>
+	<div class="container-fluid search">
+		<form id="searchForm">
+			<div class="form-group">
+				<input type="search" name="food" class="form-control" id="food" placeholder="Search food..."><br>
+			</div>
+			<div class="form-group">
+				<input type="number" name="options" class="form-control" id="options" placeholder="How many options?" min="1"><br>
+			</div>
+		</form>
+	</div>
+
+	<div class="container-fluid button">
+		<!-- <button id=foodButton onclick="console.log(getFood());">Search for Food!</button> -->
+		<button id=foodButton onclick="getFood();">Search for Food!</button>
+
+		<!-- <button id=1 onclick="addRecipe(this.id);">Check ID</button> -->
+		<br>
+	</div>
+
+	<div class="container-fluid button">
+		<a href="ShoppingList.html"><button>Go To Shopping List</button></a>
+		<br>
+	</div>
+
+	<div class="checkJson">
+		<button id=checkButton onclick="checkJSON('fake_data.json');">Check Fake Data</button>
+	</div>
+
 	<div id='foodResults'></div>
 	<br><br>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
