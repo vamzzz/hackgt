@@ -1,3 +1,13 @@
+var config = {
+	apiKey: "AIzaSyAMLlEZ2LNIAQMEdio1c7g8kIh5C1Hvqok",
+	authDomain: "grocer-ease.firebaseapp.com",
+	databaseURL: "https://grocer-ease.firebaseio.com",
+	projectId: "grocer-ease",
+	storageBucket: "grocer-ease.appspot.com",
+	messagingSenderId: "317395779439"
+};
+firebase.initializeApp(config);
+
 var shoppingList = [] // users current shopping list of ingredients
 var currentRecipes = [] // dictionary holding list of recipes currently displayed on screen
 
@@ -89,7 +99,7 @@ function getShoppingList() {
 			var ingredientItem = shoppingList[i]["ingredients"][j];
 			var foodItem = ingredientItem["food"];
 			var attrString = ingredientItem["quantity"] + " " + ingredientItem["measure"];
-			
+
 			if (listShop[foodItem]) {
 				listShop[foodItem].push(attrString)
 			} else {
@@ -98,7 +108,7 @@ function getShoppingList() {
 
 			var li = document.createElement("li");
 			var liText = document.createTextNode("(" + ingredientItem["quantity"] + " " + ingredientItem["measure"]+ ") " + ingredientItem["food"])
-			
+
 
 			li.appendChild(liText);
 			ul.appendChild(li);
@@ -136,7 +146,7 @@ function similarity(s1, s2) {
 	}, function(data, status) {
 		console.log(data);
 	});
-	
+
 }
 
 // function checkJSON(url) {
