@@ -25,6 +25,7 @@ function searchFood(foodText, foodSearches) {
 
 			var h3Text = document.createTextNode(recipe['label']);
 			a.href = recipe['url'];
+			a.target = "_blank";
 			img.src = recipe['image'];
 
 			a.appendChild(img);
