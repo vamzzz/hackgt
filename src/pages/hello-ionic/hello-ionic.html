@@ -3,23 +3,23 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Hello Ionic</ion-title>
+    <ion-title>Shopping List</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-
-  <h3>Welcome to your first Ionic app!</h3>
-
-  <p>
-    This is the best application for Hack GT.
-  </p>
-  <p>
-    Follow along on the tutorial section of the Ionic docs!
-  </p>
-  <p>
-    <button ion-button color="primary" menuToggle>Toggle Menu</button>
-  </p>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card *ngFor="let ingredient of ingredients">
+            <ion-card-header card-left>
+              {{ingredient.name}}
+              <div item-right>{{ingredient.amount}}</div>
+            </ion-card-header>
+          </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
