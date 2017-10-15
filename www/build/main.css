@@ -25512,6 +25512,28 @@ ion-navbar.toolbar {
   min-height: calc(46px + constant(safe-area-inset-top));
 }
 
+.card-background-page1 ion-card {
+  position: relative;
+  text-align: center;
+}
+
+.card-background-page1 .card-title1 {
+  position: absolute;
+  top: 36%;
+  font-size: .8em;
+  width: 100%;
+  font-weight: bold;
+  color: #fff;
+}
+
+.card-background-page1 .card-subtitle1 {
+  font-size: .5em;
+  position: absolute;
+  top: 52%;
+  width: 100%;
+  color: #fff;
+}
+
 .card-background-page ion-card {
   position: relative;
   text-align: center;

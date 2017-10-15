@@ -3,7 +3,6 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
-import { ListPage } from '../pages/list/list';
 import { MealsPage } from '../pages/meals/meals-ionic';
 import { InventoryIonicPage } from '../pages/inventory-ionic/inventory-ionic';
 
@@ -32,7 +31,6 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Shopping List', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage },
       { title: 'Meals', component: MealsPage},
       { title: 'Inventory', component: InventoryIonicPage}
     ];
