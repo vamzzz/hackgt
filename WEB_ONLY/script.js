@@ -19,6 +19,8 @@ var database = firebase.database();
 
 var shoppingList = [] // users current shopping list of ingredients
 var currentRecipes = [] // dictionary holding list of recipes currently displayed on screen
+var ingredientCompare = {}
+var potentialCatalogItems = {}
 
 function searchFood(foodText, foodSearches) {
 	currentRecipes = [] // clear past recipes held on new search
@@ -110,6 +112,7 @@ function getShoppingList() {
 			var attrString = ingredientItem["quantity"] + " " + ingredientItem["measure"];
 
 			if (listShop[foodItem]) {
+				// console.log(listShop[foodItem]);
 				listShop[foodItem].push(attrString)
 			} else {
 				listShop[foodItem] = [attrString];
@@ -153,24 +156,59 @@ function similarity(s1, s2) {
 		url: "https://westus.api.cognitive.microsoft.com/academic/v1.0/similarity?s1=" + s1 + "&s2=" + s2,
 		headers: { "Ocp-Apim-Subscription-Key" : 'ea62e1f89d6944c4a4998e21e9eda67c'},
 	}, function(data, status) {
-		console.log(data);
+		// console.log(data);
+		return data;
 	});
 
 }
 
-function checkFirebase() {
+function checkCatalog() {
+
 	// var db = database.ref('catalog').once('value').then(function(snapshot) {
 	// 	var value = snapshot.val().;
 	// 	console.log(snapshot.key);
 	// 	console.log(value);
 	// });
 
+	var shoppingList = getLocalStorage();
+	// console.log(shoppingList);
+	// console.log(shoppingList.length);
 	var db = database.ref('catalog');
 	db.on('value', function(snapshot) {
-			console.log(snapshot.val());
+		// console.log("Snapshot");
+		// console.log(snapshot.val());
+		// console.log(snapshot);
 	    snapshot.forEach(function(childSnapshot) {
 	      var childData = childSnapshot.val();
-				console.log(childData);
+				// console.log("Child Data");
+				// console.log(childData);
+				shoppingList.forEach(function(ingredients) {
+					// console.log(ingredients["ingredients"]);
+					// console.log("Ingredients Array Above");
+					for (var i = 0; i < ingredients["ingredients"].length; i++) {
+						// console.log(childData["prod_name"]);
+						// console.log(ingredients["ingredients"][i]["food"]);
+						if (childData["prod_name"].toLowerCase().includes(ingredients["ingredients"][i]["food"])) {
+							var sim = similarity(childData["prod_name"], ingredients["ingredients"][i]["food"]);
+							if (sim >= 0.75) {
+								potentialCatalogItems.push({key : sim, value : childData["prod_id"]});
+								potentialCatalogItems.sort( function(a, b) { return b - a; });
+								ingredientCompare.push({key : childData["prod_name"], value : potentialCatalogItems});
+								console.log(ingredientCompare);
+								console.log(ingredients["ingredients"][i]["food"]);
+								console.log(ingredients["ingredients"][i]["quantity"]);
+								console.log(childData["prod_name"]);
+							}
+							// console.log(ingredients["ingredients"][i]["food"]);
+							// console.log(ingredients["ingredients"][i]["quantity"]);
+							// console.log(childData["prod_name"]);
+						}
+					}
+					// console.log(ingredient["food"]);
+
+
+
+				});
 	    });
 	});
 
