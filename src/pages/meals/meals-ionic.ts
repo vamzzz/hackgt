@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController, NavParams } from 'ionic-angular';
 
-
+import $ from "jquery";
 
 @Component({
   selector: 'page-meals-ionic',
@@ -37,10 +37,11 @@ export class MealsPage {
 
   searchFood(foodText, foodSearches) {
     this.currentRecipes = [];
-    $.get({
-      dataType: 'json'
-      url: "https://api.edamam.com/search?q=" + foodText
-    }, (data: any, textStatus: string, jqXHR: JQueryXHR) ==> {
+    // JQuery.get({
+    //   dataType: 'json',
+    //   url: "https://api.edamam.com/search?q=" + foodText }
+    $.getJSON("https://api.edamam.com/search?q=" + foodText
+    , (data: any, textStatus: string, jqXHR: JQueryXHR) ==> {
       var result = data["hits"];
       var recipe = result[0]['recipe'];
       var img = recipe['image'];
