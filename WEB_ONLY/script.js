@@ -190,7 +190,7 @@ function checkCatalog() {
 						// console.log(ingredients["ingredients"][i]["food"]);
 						var ourFood = ingredients["ingredients"][i]["food"];
 						var dbFood = childData["prod_name"];
-						if (dbFood.toLowerCase().includes(ourFood) {
+						if (dbFood.toLowerCase().includes(ourFood)) {
 							var sim = similarity(dbFood, ourFood);
 							if (sim >= 0.75) {
 								potentialCatalogItems.push({key : sim, value : childData["prod_id"]});
