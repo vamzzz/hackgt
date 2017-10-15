@@ -8,10 +8,10 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/4.5.1/firebase.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-auth.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-database.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-firestore.js"></script>
+
 
 
 	<style>
@@ -47,6 +47,7 @@
 	<div class="container-fluid button">
 		<!-- <button id=foodButton onclick="console.log(getFood());">Search for Food!</button> -->
 		<button id=foodButton onclick="getFood();">Search for Food!</button>
+		<button id=checkFirebase onclick="checkFirebase();">Check Firebase</button>
 
 		<!-- <button id=1 onclick="addRecipe(this.id);">Check ID</button> -->
 		<br>

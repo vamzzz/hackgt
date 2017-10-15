@@ -8,6 +8,15 @@ var config = {
 };
 firebase.initializeApp(config);
 
+firebase.auth().signInAnonymously().catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+});
+
+var database = firebase.database();
+
 var shoppingList = [] // users current shopping list of ingredients
 var currentRecipes = [] // dictionary holding list of recipes currently displayed on screen
 
@@ -149,21 +158,20 @@ function similarity(s1, s2) {
 
 }
 
-// function checkJSON(url) {
-// 	var AJAX_req = new XMLHttpRequest();
-//   AJAX_req.open( "GET", url, true );
-//   AJAX_req.setRequestHeader("Content-type", "application/json");
-//
-//   AJAX_req.onreadystatechange = function()
-//   {
-//       if( AJAX_req.readyState == 4 && AJAX_req.status == 200 )
-//       {
-//           var response = JSON.parse( AJAX_req.responseText );
-//           // document.write( response.name );
-// 					console.log(response.snapshot);
-//       }
-//   }
-//   AJAX_req.send();
-// }
-//
-// checkJSON( 'http://localhost:8080/WEB_ONLY/fake_data.json' );
+function checkFirebase() {
+	// var db = database.ref('catalog').once('value').then(function(snapshot) {
+	// 	var value = snapshot.val().;
+	// 	console.log(snapshot.key);
+	// 	console.log(value);
+	// });
+
+	var db = database.ref('catalog');
+	db.on('value', function(snapshot) {
+			console.log(snapshot.val());
+	    snapshot.forEach(function(childSnapshot) {
+	      var childData = childSnapshot.val();
+				console.log(childData);
+	    });
+	});
+
+}
