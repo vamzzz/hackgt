@@ -2,13 +2,12 @@ import { Component } from '@angular/core';
 
 import { NavController, NavParams } from 'ionic-angular';
 
-
-
 @Component({
-  selector: 'page-hello-ionic',
-  templateUrl: 'hello-ionic.html'
+  selector: 'page-meals-ionic',
+  templateUrl: 'meals-ionic.html'
 })
-export class HelloIonicPage {
+export class MealsPage {
+  meals: Array<{title: string}>;
   ingredients: Array<{name: string, amount: number}>;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
