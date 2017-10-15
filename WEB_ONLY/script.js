@@ -26,19 +26,19 @@ function searchFood(foodText, foodSearches) {
 	currentRecipes = [] // clear past recipes held on new search
 	// var result = []
 	$.getJSON("https://api.edamam.com/search?q=" + foodText, function(data, status) {
-		var div = document.getElementById('foodResults');
+		// var div = document.getElementById('foodResults');
 		while (div.firstChild) { div.removeChild(div.firstChild); }
 
 		var recipes = data['hits'];
 		for (var index = 0; index < foodSearches; index++) {
 			var resultRecipe = { ingredients: [] }
 			var recipe = recipes[index]['recipe'];
-			var recipeDiv = document.createElement('div');
+			// var recipeDiv = document.createElement('div');
 
-			var a = document.createElement('a');
-			var img = document.createElement('img');
-			var h3 = document.createElement('h3');
-			var ul = document.createElement('ul');
+			// var a = document.createElement('a');
+			// var img = document.createElement('img');
+			// var h3 = document.createElement('h3');
+			// var ul = document.createElement('ul');
 			var button = document.createElement('button');
 			button.id = index;
 			button.addEventListener('click', function() {
@@ -53,19 +53,19 @@ function searchFood(foodText, foodSearches) {
 				ul.appendChild(li);
 			});
 
-			var h3Text = document.createTextNode(recipe['label']);
-			a.href = recipe['url'];
-			a.target = "_blank";
-			img.src = recipe['image'];
+			// var h3Text = document.createTextNode(recipe['label']);
+			// a.href = recipe['url'];
+			// a.target = "_blank";
+			// img.src = recipe['image'];
 
-			a.appendChild(img);
-			h3.appendChild(h3Text);
-			button.appendChild(buttonContent);
-			recipeDiv.appendChild(a);
-			recipeDiv.appendChild(h3);
-			recipeDiv.appendChild(ul);
-			recipeDiv.appendChild(button);
-			div.appendChild(recipeDiv);
+			// a.appendChild(img);
+			// h3.appendChild(h3Text);
+			// button.appendChild(buttonContent);
+			// recipeDiv.appendChild(a);
+			// recipeDiv.appendChild(h3);
+			// recipeDiv.appendChild(ul);
+			// recipeDiv.appendChild(button);
+			// div.appendChild(recipeDiv);
 
 			var firstRecipeIngredients = recipe['ingredients'];
 			firstRecipeIngredients.forEach(function(i) {
@@ -97,12 +97,9 @@ function addRecipe(buttonIdString) {
 
 function getShoppingList() {
 	shoppingList = getLocalStorage();
-	var div = document.getElementById("shoppingList");
-	var ul = document.createElement("ul");
-	// console.log(shoppingList.length);
-
+	// var div = document.getElementById("shoppingList");
+	// var ul = document.createElement("ul");
 	var listShop = {}
-	// console.log('SLIST', shoppingList);
 
 	for (var i = 0; i < shoppingList.length; i++) {
 		for (var j = 0; j < shoppingList[i]["ingredients"].length; j++) {
@@ -112,32 +109,95 @@ function getShoppingList() {
 			var attrString = ingredientItem["quantity"] + " " + ingredientItem["measure"];
 
 			if (listShop[foodItem]) {
-				// console.log(listShop[foodItem]);
 				listShop[foodItem].push(attrString)
 			} else {
 				listShop[foodItem] = [attrString];
 			}
-
-			var li = document.createElement("li");
-			var liText = document.createTextNode("(" + ingredientItem["quantity"] + " " + ingredientItem["measure"]+ ") " + ingredientItem["food"])
-
-
-			li.appendChild(liText);
-			ul.appendChild(li);
+			// var li = document.createElement("li");
+			// var liText = document.createTextNode("(" + ingredientItem["quantity"] + " " + ingredientItem["measure"]+ ") " + ingredientItem["food"])
+			// li.appendChild(liText);
+			// ul.appendChild(li);
 		}
 
 	}
-	ul.appendChild(document.createElement("li"));
+	return listShop;
+	// ul.appendChild(document.createElement("li"));
 
-	for (var item in listShop) {
-		var li = document.createElement("li");
-		var liText = document.createTextNode("(" + listShop[item] + ") " + item);
-		li.appendChild(liText);
-		ul.appendChild(li);
-	};
+	// for (var item in listShop) {
+	// 	var li = document.createElement("li");
+	// 	var liText = document.createTextNode("(" + listShop[item] + ") " + item);
+	// 	li.appendChild(liText);
+	// 	ul.appendChild(li);
+	// };
 
-	div.appendChild(ul);
+	// div.appendChild(ul);
 }
+
+// function getShoppingList() {
+// 	shoppingList = getLocalStorage();
+// 	var div = document.getElementById("shoppingList");
+// 	var ul = document.createElement("ul");
+// 	// console.log(shoppingList.length);
+
+// 	var listShop = {}
+// 	// console.log('SLIST', shoppingList);
+
+// 	for (var i = 0; i < shoppingList.length; i++) {
+// 		for (var j = 0; j < shoppingList[i]["ingredients"].length; j++) {
+
+// 			var ingredientItem = shoppingList[i]["ingredients"][j];
+
+// 			var food = ingredientItem["food"];
+// 			var quantity = ingredientItem["quantity"];
+// 			var measure = ingredientItem["measure"]
+// 			var qmString = quantityMeasureString(quantity, measure);
+// 			console.log("Top");
+// 			console.log(ingredientItem, qmString);
+
+// 			if (!measure && parseInt(quantity) != 1 && food[food.length -1] == 's') {
+// 				food = food.slice(0,-1);
+// 			}
+
+// 			if (listShop[food]) {
+// 				if (!listShop[food]['measure'] || listShop[food]['measure'] == measure) {
+// 					listShop[food]['quantity'] += quantity;
+// 					listShop[food]['qmString'] = quantityMeasureString(listShop[food][measure]);
+// 					console.log("Middle");
+// 					console.log(ingredientItem, listShop[food]['qmString']);
+// 				} else { // at this point, measure becomes useless
+// 					listShop[food]['measure'] = "Nonsense"
+// 					listShop[food]['qmString'] += quantityMeasureString(quantity, measure);
+// 					console.log("Bottom");
+// 					console.log(ingredientItem, listShop[food]['qmString']);
+// 				}
+// 			} else {
+// 				ingredientItem['qmString'] == qmString;
+// 				listShop[food] = ingredientItem;
+// 			}
+
+// 			var li = document.createElement("li");
+// 			var liText = document.createTextNode("(" + qmString + ") " + food);
+
+
+// 			li.appendChild(liText);
+// 			ul.appendChild(li);
+// 		}
+
+// 	}
+// 	ul.appendChild(document.createElement("li"));
+
+// 	// console.log("List Shop");
+// 	// console.log(listShop);
+
+// 	for (var item in listShop) {
+// 		var li = document.createElement("li");
+// 		var liText = document.createTextNode("(" + item['qmString'] + ") " + item);
+// 		li.appendChild(liText);
+// 		ul.appendChild(li);
+// 	};
+// 	div.appendChild(ul);
+// }
+
 
 function setLocalStorage() {
 	localStorage.setItem("shoppingList", JSON.stringify(shoppingList));
@@ -207,9 +267,6 @@ function checkCatalog() {
 						}
 					}
 					// console.log(ingredient["food"]);
-
-
-
 				});
 	    });
 	});
