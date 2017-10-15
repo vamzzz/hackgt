@@ -188,16 +188,18 @@ function checkCatalog() {
 					for (var i = 0; i < ingredients["ingredients"].length; i++) {
 						// console.log(childData["prod_name"]);
 						// console.log(ingredients["ingredients"][i]["food"]);
-						if (childData["prod_name"].toLowerCase().includes(ingredients["ingredients"][i]["food"])) {
-							var sim = similarity(childData["prod_name"], ingredients["ingredients"][i]["food"]);
+						var ourFood = ingredients["ingredients"][i]["food"];
+						var dbFood = childData["prod_name"];
+						if (dbFood.toLowerCase().includes(ourFood) {
+							var sim = similarity(dbFood, ourFood);
 							if (sim >= 0.75) {
 								potentialCatalogItems.push({key : sim, value : childData["prod_id"]});
 								potentialCatalogItems.sort( function(a, b) { return b - a; });
-								ingredientCompare.push({key : childData["prod_name"], value : potentialCatalogItems});
+								ingredientCompare.push({key : ourFood, value : potentialCatalogItems});
 								console.log(ingredientCompare);
-								console.log(ingredients["ingredients"][i]["food"]);
+								console.log(ourFood);
 								console.log(ingredients["ingredients"][i]["quantity"]);
-								console.log(childData["prod_name"]);
+								console.log(dbFood);
 							}
 							// console.log(ingredients["ingredients"][i]["food"]);
 							// console.log(ingredients["ingredients"][i]["quantity"]);
