@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 
 import { NavController, NavParams } from 'ionic-angular';
+import { HelloIonicPage } from '../hello-ionic/hello-ionic'
 
-import $ from "jquery";
+import * as jQuery from "jquery";
+
 
 @Component({
   selector: 'page-meals-ionic',
@@ -11,17 +13,15 @@ import $ from "jquery";
 export class MealsPage {
   foods;
   currentRecipes;
-  meals: Array<{title: string}>;
-  ingredients: Array<{name: string, amount: number}>;
+  meals;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
-    this.ingredients = [];
-    for(let i = 1; i < 11; i++) {
-      this.ingredients.push({
-        name: 'Flour ' + i,
-        amount: i * 10
-      });
-    }
+  }
+
+  logEvent(event, item) {
+    this.navCtrl.push(HelloIonicPage, {
+      item: item
+    });
   }
 
   getFood(ev) {
@@ -36,20 +36,38 @@ export class MealsPage {
     }
 
   searchFood(foodText, foodSearches) {
-    this.currentRecipes = [];
-    // JQuery.get({
-    //   dataType: 'json',
-    //   url: "https://api.edamam.com/search?q=" + foodText }
-    $.getJSON("https://api.edamam.com/search?q=" + foodText
-    , (data: any, textStatus: string, jqXHR: JQueryXHR) ==> {
-      var result = data["hits"];
-      var recipe = result[0]['recipe'];
-      var img = recipe['image'];
-      var href = recipe['url'];
-      result.push({recipe: recipe, Image: img, href: href});
-      console.log(result);
-      return result;
-      });
+    var currentRecipes = [];
+    jQuery.getJSON("https://api.edamam.com/search?q=" + foodText, function(data, status) {
+ //      while (div.firstChild) { div.removeChild(div.firstChild); }
+  
+      var recipes = data['hits'];
       
+      this.meals = recipes;
+      console.log(this.meals)
+      for (var index = 0; index < foodSearches; index++) {
+        var resultRecipe = { ingredients: [] };
+        var recipe = recipes[index]['recipe'];
+
+        /* create button to 'add recipe' for each
+
+        var button = document.createElement('button');
+        button.id = index;
+        button.addEventListener('click', function() {
+          addRecipe(this.id);
+        }, false);
+        var buttonContent = document.createTextNode("Add Recipe");
+        */
+  
+        var firstRecipeIngredients = recipe['ingredients'];
+        firstRecipeIngredients.forEach(function(i) {
+          resultRecipe.ingredients.push({quantity: i['quantity'],
+                      measure: i['measure'] == '<unit>' ? "" : i['measure'],
+                      food: i['food']});})
+        // result.push(resultRecipe);}
+        currentRecipes.push(resultRecipe);
+      } // end for loop
+    });  
+    // return result;
+    return currentRecipes; // currentRecipes now holds each recipe values
   }
 }

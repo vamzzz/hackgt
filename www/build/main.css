@@ -25521,6 +25521,7 @@ ion-navbar.toolbar {
   position: absolute;
   top: 36%;
   font-size: .8em;
+  text-shadow: .1em .1em #000;
   width: 100%;
   font-weight: bold;
   color: #fff;
@@ -25528,6 +25529,7 @@ ion-navbar.toolbar {
 
 .card-background-page1 .card-subtitle1 {
   font-size: .5em;
+  text-shadow: .2em .2em #000;
   position: absolute;
   top: 52%;
   width: 100%;
@@ -25543,6 +25545,7 @@ ion-navbar.toolbar {
   position: absolute;
   top: 36%;
   font-size: 2.0em;
+  text-shadow: 0.05em 0.05em #000;
   width: 100%;
   font-weight: bold;
   color: #fff;
@@ -25550,6 +25553,7 @@ ion-navbar.toolbar {
 
 .card-background-page .card-subtitle {
   font-size: 1.0em;
+  text-shadow: 0.01em 0.01em #000;
   position: absolute;
   top: 52%;
   width: 100%;

@@ -68,7 +68,7 @@ var HelloIonicPage = (function () {
 }());
 HelloIonicPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-hello-ionic',template:/*ion-inline-start:"/Users/Vamshi/Documents/grocer-ease/src/pages/hello-ionic/hello-ionic.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Shopping List</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <ion-card *ngFor="let ingredient of ingredients">\n            <ion-card-header card-left>\n              {{ingredient.name}}\n              <div item-right>{{ingredient.amount}}</div>\n            </ion-card-header>\n          </ion-card>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>\n'/*ion-inline-end:"/Users/Vamshi/Documents/grocer-ease/src/pages/hello-ionic/hello-ionic.html"*/
+        selector: 'page-hello-ionic',template:/*ion-inline-start:"/Users/Vamshi/Documents/grocer-ease/src/pages/hello-ionic/hello-ionic.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Shopping List</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content class="card-background-page">\n  <ion-card>\n      <img src="../../assets/img/american-cheese.jpg"/>\n      <div class="card-title">American Cheese</div>\n      <div class="card-subtitle">Needs 4 slices</div>\n    </ion-card>\n\n  <ion-card>\n    <img src="../../assets/img/pecans.jpg"/>\n    <div class="card-title">Pecans</div>\n    <div class="card-subtitle">Needs 3oz</div>\n  </ion-card>\n\n  <ion-card>\n    <img src="../../assets/img/hamburger-buns.jpg"/>\n    <div class="card-title">Hamburger Buns</div>\n    <div class="card-subtitle">Needs 1</div>\n  </ion-card>\n\n  <ion-card>\n    <img src="../../assets/img/tomatoe.jpg"/>\n    <div class="card-title">Tomato</div>\n    <div class="card-subtitle">Needs 1</div>\n  </ion-card>\n  <ion-card>\n      <img src="../../assets/img/ketchup.jpg"/>\n      <div class="card-title">Ketchup</div>\n      <div class="card-subtitle">Needs 1 bottle</div>\n    </ion-card>\n\n  <ion-card>\n    <img src="../../assets/img/pickles.jpg"/>\n    <div class="card-title">Pecans</div>\n    <div class="card-subtitle">Needs 1 jar</div>\n  </ion-card>\n\n  <ion-card>\n    <img src="../../assets/img/broccoli.jpg"/>\n    <div class="card-title">Broccoli</div>\n    <div class="card-subtitle">Needs 1 lb</div>\n  </ion-card>\n\n  <ion-card>\n      <img src="../../assets/img/soy-sauce.jpg"/>\n      <div class="card-title">Soy Sauce</div>\n      <div class="card-subtitle">Needs 1 bottle</div>\n    </ion-card>\n    <ion-card>\n        <img src="../../assets/img/honey.jpg"/>\n        <div class="card-title">Honey</div>\n        <div class="card-subtitle">Needs 1 bottle</div>\n      </ion-card>\n  \n    <ion-card>\n      <img src="../../assets/img/garlic.jpg"/>\n      <div class="card-title">Garlic</div>\n      <div class="card-subtitle">Needs 8 cloves</div>\n    </ion-card>\n  \n    <ion-card>\n      <img src="../../assets/img/milk.jpg"/>\n      <div class="card-title">Milk</div>\n      <div class="card-subtitle">Needs 1 gallon</div>\n    </ion-card>\n  \n    <ion-card>\n      <img src="../../assets/img/onion.jpg"/>\n      <div class="card-title">Onion</div>\n      <div class="card-subtitle">Needs 6 bulbs</div>\n    </ion-card>\n    <ion-card>\n        <img src="../../assets/img/oil.jpg"/>\n        <div class="card-title">Oil</div>\n        <div class="card-subtitle">Needs 1 32oz bottle</div>\n      </ion-card>\n  \n    <ion-card>\n      <img src="../../assets/img/steak.jpg"/>\n      <div class="card-title">Steak Strip</div>\n      <div class="card-subtitle">Needs 1 strip</div>\n    </ion-card>\n  \n    <ion-card>\n      <img src="../../assets/img/rosemary.jpg"/>\n      <div class="card-title">Rosemary</div>\n      <div class="card-subtitle">Needs 20 stalks</div>\n    </ion-card>\n  \n    <ion-card>\n        <img src="../../assets/img/potato.jpg"/>\n        <div class="card-title">Potato</div>\n        <div class="card-subtitle">Needs 8 lbs</div>\n      </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/Vamshi/Documents/grocer-ease/src/pages/hello-ionic/hello-ionic.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], HelloIonicPage);
@@ -84,6 +84,9 @@ HelloIonicPage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MealsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__hello_ionic_hello_ionic__ = __webpack_require__(188);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jquery__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -95,18 +98,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
 var MealsPage = (function () {
     function MealsPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.ingredients = [];
-        for (var i = 1; i < 11; i++) {
-            this.ingredients.push({
-                name: 'Flour ' + i,
-                amount: i * 10
-            });
-        }
     }
+    MealsPage.prototype.logEvent = function (event, item) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__hello_ionic_hello_ionic__["a" /* HelloIonicPage */], {
+            item: item
+        });
+    };
     MealsPage.prototype.getFood = function (ev) {
         // Reset items back to all of the items
         //this.initializeItems();
@@ -116,26 +119,47 @@ var MealsPage = (function () {
         return this.searchFood(val, 1);
     };
     MealsPage.prototype.searchFood = function (foodText, foodSearches) {
-        this.currentRecipes = [];
-        $.getJSON("https://api.edamam.com/search?q=" + foodText, function (data, status) {
-            var result = [];
-            var recipe = data['hits']['recipes'];
-            var img = recipe['image'];
-            var href = recipe['url'];
-            result.push({ recipe: recipe, Image: img, href: href });
-            console.log(result);
-            return result;
+        var currentRecipes = [];
+        __WEBPACK_IMPORTED_MODULE_3_jquery__["getJSON"]("https://api.edamam.com/search?q=" + foodText, function (data, status) {
+            //      while (div.firstChild) { div.removeChild(div.firstChild); }
+            var recipes = data['hits'];
+            this.meals = recipes;
+            console.log(this.meals);
+            for (var index = 0; index < foodSearches; index++) {
+                var resultRecipe = { ingredients: [] };
+                var recipe = recipes[index]['recipe'];
+                /* create button to 'add recipe' for each
+        
+                var button = document.createElement('button');
+                button.id = index;
+                button.addEventListener('click', function() {
+                  addRecipe(this.id);
+                }, false);
+                var buttonContent = document.createTextNode("Add Recipe");
+                */
+                var firstRecipeIngredients = recipe['ingredients'];
+                firstRecipeIngredients.forEach(function (i) {
+                    resultRecipe.ingredients.push({ quantity: i['quantity'],
+                        measure: i['measure'] == '<unit>' ? "" : i['measure'],
+                        food: i['food'] });
+                });
+                // result.push(resultRecipe);}
+                currentRecipes.push(resultRecipe);
+            } // end for loop
         });
+        // return result;
+        return currentRecipes; // currentRecipes now holds each recipe values
     };
     return MealsPage;
 }());
 MealsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-meals-ionic',template:/*ion-inline-start:"/Users/Vamshi/Documents/grocer-ease/src/pages/meals/meals-ionic.html"*/'\n\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Meals</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content class="card-background-page">\n    <ion-searchbar (ionInput)="getFood($event)"></ion-searchbar>\n    <ion-list>\n      <ion-item *ngFor="let food of foods">\n        {{ food }}\n      </ion-item>\n    </ion-list>    \n    \n\n  <ion-card>\n    <img src="../../assets/img/bananabread.jpg"/>\n    <div class="card-title">Banana Bread</div>\n    <div class="card-subtitle">Needs 8 ingredients</div>\n  </ion-card>\n\n  <ion-card>\n    <img src="../../assets/img/burger.jpg"/>\n    <div class="card-title">Burger</div>\n    <div class="card-subtitle">Needs 4 ingredients</div>\n  </ion-card>\n\n  <ion-card>\n    <img src="../../assets/img/chicken-broccoli.jpg"/>\n    <div class="card-title">Chicken And Broccoli</div>\n    <div class="card-subtitle">Needs 2 ingredients</div>\n  </ion-card>\n\n  <ion-card>\n    <img src="../../assets/img/pancakes.jpg"/>\n    <div class="card-title">Pancakes</div>\n    <div class="card-subtitle">Needs 1 ingredient</div>\n  </ion-card>\n\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/Vamshi/Documents/grocer-ease/src/pages/meals/meals-ionic.html"*/
+        selector: 'page-meals-ionic',template:/*ion-inline-start:"/Users/Vamshi/Documents/grocer-ease/src/pages/meals/meals-ionic.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Meals</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content class="card-background-page">\n  <ion-card>\n    <img src="../../assets/img/bananabread.jpg"/>\n    <div class="card-title">Banana Bread</div>\n    <div class="card-subtitle">Needs 1 ingredients</div>\n    <button (click)="logEvent($event)">Add to cart</button>\n  </ion-card>\n\n  <ion-card>\n    <img src="../../assets/img/burger.jpg"/>\n    <div class="card-title">Burger</div>\n    <div class="card-subtitle">Needs 7 ingredients</div>\n    <button (click)="logEvent($event)">Add to cart</button>\n  </ion-card>\n\n  <ion-card>\n    <img src="../../assets/img/chicken-broccoli.jpg"/>\n    <div class="card-title">Chicken And Broccoli</div>\n    <div class="card-subtitle">Needs 4 ingredients</div>\n    <button (click)="logEvent($event)">Add to cart</button>\n  </ion-card>\n\n  <ion-card>\n    <img src="../../assets/img/pancakes.jpg"/>\n    <div class="card-title">Pancakes</div>\n    <div class="card-subtitle">Needs 1 ingredient</div>\n    <button (click)="logEvent($event)">Add to cart</button>\n  </ion-card>\n\n  <ion-card>\n    <img src="../../assets/img/tomato.jpg"/>\n    <div class="card-title">Tomato Soup</div>\n    <div class="card-subtitle">Needs 3 ingredient</div>\n    <button (click)="logEvent($event)">Add to cart</button>\n  </ion-card>\n\n  <ion-card>\n    <img src="../../assets/img/fried-chicken.jpg"/>\n    <div class="card-title">Fried Chicken</div>\n    <div class="card-subtitle">Needs 2 ingredient</div>\n    <button (click)="logEvent($event)">Add to cart</button>\n  </ion-card>\n\n    <ion-card>\n      <img src="../../assets/img/steak-potatoes.jpg"/>\n      <div class="card-title">Steak and Potatoes</div>\n      <div class="card-subtitle">Needs 4 ingredient</div>\n      <button (click)="logEvent($event)">Add to cart</button>\n    </ion-card>\n\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/Vamshi/Documents/grocer-ease/src/pages/meals/meals-ionic.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object])
 ], MealsPage);
 
+var _a, _b;
 //# sourceMappingURL=meals-ionic.js.map
 
 /***/ }),
@@ -174,7 +198,7 @@ var InventoryIonicPage = (function () {
 }());
 InventoryIonicPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-inventory-ionic',template:/*ion-inline-start:"/Users/Vamshi/Documents/grocer-ease/src/pages/inventory-ionic/inventory-ionic.html"*/'<ion-header>\n    \n    <ion-navbar>\n        <button ion-button menuToggle>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title>Inventory</ion-title>\n      </ion-navbar>\n    \n    </ion-header>\n    \n    \n    <ion-content class="card-background-page1">\n      <ion-grid>\n        <ion-row>\n          <ion-col>\n              <ion-card>\n                  <img src="../../assets/img/bananabread.jpg"/>\n                  <div class="card-title1">Banana Bread</div>\n                  <div class="card-subtitle1">Needs 8 ingredients</div>\n                </ion-card>\n          </ion-col>\n          <ion-col>\n              <ion-card>\n                  <img src="../../assets/img/burger.jpg"/>\n                  <div class="card-title1">Burger</div>\n                  <div class="card-subtitle1">Needs 4 ingredients</div>\n                </ion-card>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>\n              <ion-card>\n                  <img src="../../assets/img/chicken-broccoli.jpg"/>\n                  <div class="card-title1">Chicken And Broccoli</div>\n                  <div class="card-subtitle1">Needs 2 ingredients</div>\n                </ion-card>\n          </ion-col>\n          <ion-col>\n              <ion-card>\n                  <img src="../../assets/img/pancakes.jpg"/>\n                  <div class="card-title1">Pancakes</div>\n                  <div class="card-subtitle1">Needs 1 ingredient</div>\n                </ion-card>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n    \n    </ion-content>\n    '/*ion-inline-end:"/Users/Vamshi/Documents/grocer-ease/src/pages/inventory-ionic/inventory-ionic.html"*/
+        selector: 'page-inventory-ionic',template:/*ion-inline-start:"/Users/Vamshi/Documents/grocer-ease/src/pages/inventory-ionic/inventory-ionic.html"*/'<ion-header>\n    \n    <ion-navbar>\n        <button ion-button menuToggle>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title>Inventory</ion-title>\n      </ion-navbar>\n    \n    </ion-header>\n    \n    \n    <ion-content class="card-background-page1">\n      <ion-grid>\n        <ion-row>\n          <ion-col>\n              <ion-card>\n                  <img src="../../assets/img/flour.jpg"/>\n                  <div class="card-title1">Flour</div>\n                  <div class="card-subtitle1">Have 1 lb left</div>\n                </ion-card>\n          </ion-col>\n          <ion-col>\n              <ion-card>\n                  <img src="../../assets/img/sugar.jpg"/>\n                  <div class="card-title1">Sugar</div>\n                  <div class="card-subtitle1">Have .5 lb left</div>\n                </ion-card>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>\n              <ion-card>\n                  <img src="../../assets/img/eggs.jpg"/>\n                  <div class="card-title1">Eggs</div>\n                  <div class="card-subtitle1">Have 12 left</div>\n                </ion-card>\n          </ion-col>\n          <ion-col>\n              <ion-card>\n                  <img src="../../assets/img/chicken.jpg"/>\n                  <div class="card-title1">Chicken</div>\n                  <div class="card-subtitle1">Have 4 breasts left</div>\n                </ion-card>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>\n              <ion-card>\n                  <img src="../../assets/img/sausage.jpg"/>\n                  <div class="card-title1">Sausage</div>\n                  <div class="card-subtitle1">Have 2 rolls left</div>\n                </ion-card>\n          </ion-col>\n          <ion-col>\n              <ion-card>\n                  <img src="../../assets/img/beer.jpg"/>\n                  <div class="card-title1">Beer</div>\n                  <div class="card-subtitle1">Have a 6 pack left</div>\n                </ion-card>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n            <ion-col>\n                <ion-card>\n                    <img src="../../assets/img/paprika.jpg"/>\n                    <div class="card-title1">Paprika</div>\n                    <div class="card-subtitle1">Have a bottle left</div>\n                  </ion-card>\n            </ion-col>\n            <ion-col>\n                <ion-card>\n                    <img src="../../assets/img/pasta.jpg"/>\n                    <div class="card-title1">Pasta</div>\n                    <div class="card-subtitle1">Have a box left</div>\n                  </ion-card>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n              <ion-col>\n                  <ion-card>\n                      <img src="../../assets/img/pasta-sauce.jpg"/>\n                      <div class="card-title1">Pasta Sauce</div>\n                      <div class="card-subtitle1">Have 3 bottles left</div>\n                    </ion-card>\n              </ion-col>\n              <ion-col>\n                  <ion-card>\n                      <img src="../../assets/img/black-pepper.jpg"/>\n                      <div class="card-title1">Black Pepper</div>\n                      <div class="card-subtitle1">Have a bottle left</div>\n                    </ion-card>\n              </ion-col>\n            </ion-row>\n            <ion-row>\n              <ion-col>\n                  <ion-card>\n                      <img src="../../assets/img/salt.jpg"/>\n                      <div class="card-title1">Salt</div>\n                      <div class="card-subtitle1">Have 2 bottles left</div>\n                    </ion-card>\n              </ion-col>\n              <ion-col>\n                  <ion-card>\n                      <img src="../../assets/img/cumin.jpg"/>\n                      <div class="card-title1">Cumin</div>\n                      <div class="card-subtitle1">Have a bottle left</div>\n                    </ion-card>\n              </ion-col>\n            </ion-row>\n      </ion-grid>\n    \n    </ion-content>\n    '/*ion-inline-end:"/Users/Vamshi/Documents/grocer-ease/src/pages/inventory-ionic/inventory-ionic.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], InventoryIonicPage);

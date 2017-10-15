@@ -1,5 +1,3 @@
-
-
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
@@ -11,37 +9,54 @@
 
 
 <ion-content class="card-background-page">
-    <ion-searchbar (ionInput)="getFood($event)"></ion-searchbar>
-    <ion-list>
-      <ion-item *ngFor="let food of foods">
-        {{ food }}
-      </ion-item>
-    </ion-list>    
-    
-
   <ion-card>
     <img src="../../assets/img/bananabread.jpg"/>
     <div class="card-title">Banana Bread</div>
-    <div class="card-subtitle">Needs 8 ingredients</div>
+    <div class="card-subtitle">Needs 1 ingredients</div>
+    <button (click)="logEvent($event)">Add to cart</button>
   </ion-card>
 
   <ion-card>
     <img src="../../assets/img/burger.jpg"/>
     <div class="card-title">Burger</div>
-    <div class="card-subtitle">Needs 4 ingredients</div>
+    <div class="card-subtitle">Needs 7 ingredients</div>
+    <button (click)="logEvent($event)">Add to cart</button>
   </ion-card>
 
   <ion-card>
     <img src="../../assets/img/chicken-broccoli.jpg"/>
     <div class="card-title">Chicken And Broccoli</div>
-    <div class="card-subtitle">Needs 2 ingredients</div>
+    <div class="card-subtitle">Needs 4 ingredients</div>
+    <button (click)="logEvent($event)">Add to cart</button>
   </ion-card>
 
   <ion-card>
     <img src="../../assets/img/pancakes.jpg"/>
     <div class="card-title">Pancakes</div>
     <div class="card-subtitle">Needs 1 ingredient</div>
+    <button (click)="logEvent($event)">Add to cart</button>
   </ion-card>
+
+  <ion-card>
+    <img src="../../assets/img/tomato.jpg"/>
+    <div class="card-title">Tomato Soup</div>
+    <div class="card-subtitle">Needs 3 ingredient</div>
+    <button (click)="logEvent($event)">Add to cart</button>
+  </ion-card>
+
+  <ion-card>
+    <img src="../../assets/img/fried-chicken.jpg"/>
+    <div class="card-title">Fried Chicken</div>
+    <div class="card-subtitle">Needs 2 ingredient</div>
+    <button (click)="logEvent($event)">Add to cart</button>
+  </ion-card>
+
+    <ion-card>
+      <img src="../../assets/img/steak-potatoes.jpg"/>
+      <div class="card-title">Steak and Potatoes</div>
+      <div class="card-subtitle">Needs 4 ingredient</div>
+      <button (click)="logEvent($event)">Add to cart</button>
+    </ion-card>
 
 
 
